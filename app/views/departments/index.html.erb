@@ -2,4 +2,10 @@
 <% @departments.each do |dept| %>
     <h2><%= dept.name %></h2>
     <p>Floor: <%= dept.floor %></p>
+    <div id="dept-<%= dept.id %>">
+        <h3>Employees</h3>
+        <% dept.employees.each do |emply| %>
+            <p><%= emply.name %></p>
+        <% end %> 
+    </div>
 <% end %>
