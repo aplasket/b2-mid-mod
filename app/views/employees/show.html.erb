@@ -1,0 +1,19 @@
+<h1>Employee Name: <%= @employee.name %></h1>
+<p>Department: <%= @employee.department.name %></p>
+<div id="old-tick-<%= @employee.id %>">
+  <p>Oldest Ticket: <%= @employee.oldest_ticket.first %></p>
+</div>
+
+<h4>Tickets</h4>
+<div id="tickets-<%= @employee.id %>">
+<% @employee.ticket_order.each do |tx| %>
+  <p><%= tx.subject %></p>
+<% end %>
+</div>
+
+<h4>Add Ticket to Employee:</h4>
+<%= form_with url: "/employees/#{@employee.id}/employee_tickets", local: true, method: :post do |f| %>
+  <%= f.label :ticket_id %>
+  <%= f.text_field :ticket_id %>
+  <%= f.submit "Submit" %>
+<% end %>
