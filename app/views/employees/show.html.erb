@@ -1,7 +1,7 @@
 <h1>Employee Name: <%= @employee.name %></h1>
 <p>Department: <%= @employee.department.name %></p>
 <div id="old-tick-<%= @employee.id %>">
-  <p>Oldest Ticket: <%= @employee.oldest_ticket %></p>
+  <p>Oldest Ticket: <%= @employee.oldest_ticket.first %></p>
 </div>
 
 <h4>Tickets</h4>
